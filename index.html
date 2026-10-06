@@ -1165,38 +1165,41 @@
 
        /* --- اصلاح موبایل - نانوکاهگل --- */
 @media screen and (max-width: 768px) {
-  /* تنظیم کانتینر اصلی هدر برای چیدمان عمودی */
   .site-header {
-    position: relative !important; /* غیرفعال کردن استیکی بودن در موبایل برای جلوگیری از تداخل */
-    height: auto !important;
-    padding: 15px 10px !important;
+    /* هدر در موبایل به صورت اتوماتیک ارتفاع می‌گیرد */
   }
 
   .nav-inner {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-    gap: 15px !important; /* فاصله بین لوگو و دکمه */
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
   }
 
-  /* تنظیم دکمه تماس */
+  .brand-logo {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    /* منوی طولانی دسکتاپ در موبایل مخفی می‌شود تا صفحه شلوغ نشود */
+    display: none;
+  }
+
   .btn-call-nav {
-    position: static !important; /* خارج کردن از جریان مطلق */
-    width: 100% !important;
-    max-width: 300px !important;
-    text-align: center !important;
-    order: 2 !important; /* دکمه حتماً پایینِ متن‌ها قرار می‌گیرد */
-    padding: 12px 20px !important;
-    font-size: 14px !important;
-    margin: 0 auto !important;
-  }
-
-  /* تنظیم برند و متن‌ها */
-  .brand, .nav-inner > div:first-child {
-    order: 1 !important;
-    text-align: center !important;
-    width: 100% !important;
+    box-sizing: border-box;
+    width: min(100%, 320px);
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    font-size: 0.875rem;
+    text-align: center;
   }
 }
 
