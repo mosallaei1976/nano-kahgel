@@ -1175,6 +1175,40 @@
             .gallery-grid { grid-template-columns: 1fr; }
             .gallery-item.span-2 { grid-column: span 1; }
         }
+        @media screen and (max-width: 768px) {
+  /* ۱. ایجاد فضای تنفس در بالای سایت */
+  body {
+    padding-top: 40px; 
+  }
+
+  /* ۲. خروج هدر از حالت شناور/فیکس و تنظیم فضای پایین آن */
+  .site-header {
+    position: relative; 
+    margin-bottom: 30px;
+    background: transparent;
+  }
+
+  /* ۳. چیدمان عمودی برای شماره‌ها و دکمه */
+  .nav-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  /* ۴. استایل‌دهی به باکس شماره تلفن */
+  .nav-inner .phone-box { /* کلاس حدودی برای شماره تماس */
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  /* مخفی کردن منوهای اضافی که در موبایل کاربرد ندارند */
+  .nav-links {
+    display: none;
+  }
+}
+
     </style>
 </head>
 <body>
