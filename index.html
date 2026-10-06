@@ -1163,89 +1163,43 @@
             .credentials-row { justify-content: center; }
         }
 
-        @media (max-width: 768px) {
-            .site-header .nav-links { display: none; }
-            .hero-title { font-size: 2.1rem; }
-            .hero-desc { font-size: 1rem; }
-            .section { padding: 60px 0; }
-            .spotlight-grid-2 { grid-template-columns: 1fr; }
-            .app-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .mobile-float-cta { display: block; }
-            body { padding-bottom: 75px; }
-            .gallery-grid { grid-template-columns: 1fr; }
-            .gallery-item.span-2 { grid-column: span 1; }
-        }
-        /* بهینه‌سازی اختصاصی برای نمایش بدون نقص در موبایل */
+       /* --- اصلاح موبایل - نانوکاهگل --- */
 @media screen and (max-width: 768px) {
-  /* تنظیم هدر و لوگو */
-  header, .navbar, .nav-container {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 12px !important;
-    padding: 12px 16px !important;
+  /* تنظیم کانتینر اصلی هدر برای چیدمان عمودی */
+  .site-header {
+    position: relative !important; /* غیرفعال کردن استیکی بودن در موبایل برای جلوگیری از تداخل */
+    height: auto !important;
+    padding: 15px 10px !important;
   }
 
-  /* اصلاح دکمه تماس بالای صفحه */
-  .header-cta, .contact-btn, a[href^="tel:"] {
-    font-size: 13px !important;
-    padding: 8px 14px !important;
-    white-space: nowrap !important;
-    width: auto !important;
-    max-width: 90% !important;
-    text-align: center !important;
-  }
-/* ===== نسخه نهایی اصلاح هدر و هیرو در موبایل ===== */
-@media screen and (max-width: 768px) {
-
-  /* هدر: چیدمان ستونی، بدون همپوشانی، ارتفاع کم */
-  header, .navbar, .nav-container, .site-header {
+  .nav-inner {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    gap: 10px !important;
-    padding: 14px 16px !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-  /* عنوان برند: کوچک، تک‌خطی، بدون بیرون‌زدگی */
-  header h1, .brand-title, .logo-text, .site-title {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
-    white-space: normal !important;
-    word-break: break-word !important;
-    text-align: center !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
-
-  /* دکمه تماس هدر: تمام‌عرض و خوانا */
-  header .cta, .header-cta, header a[href^="tel:"], .btn-contact {
-    display: block !important;
     width: 100% !important;
-    max-width: 280px !important;
+    gap: 15px !important; /* فاصله بین لوگو و دکمه */
+  }
+
+  /* تنظیم دکمه تماس */
+  .btn-call-nav {
+    position: static !important; /* خارج کردن از جریان مطلق */
+    width: 100% !important;
+    max-width: 300px !important;
+    text-align: center !important;
+    order: 2 !important; /* دکمه حتماً پایینِ متن‌ها قرار می‌گیرد */
+    padding: 12px 20px !important;
+    font-size: 14px !important;
     margin: 0 auto !important;
-    font-size: 15px !important;
-    padding: 10px 16px !important;
-    white-space: nowrap !important;
-    position: static !important;
   }
 
-  /* اگر عناصر absolute موقعیت‌دهی شده‌اند، بازنشانی شوند */
-  header * {
-    position: static !important;
-    transform: none !important;
-  }
-
-  /* فاصله هیرو از هدر، چون هدر بلندتر شده */
-  .hero, section.hero, #hero {
-    padding-top: 24px !important;
-    margin-top: 0 !important;
+  /* تنظیم برند و متن‌ها */
+  .brand, .nav-inner > div:first-child {
+    order: 1 !important;
+    text-align: center !important;
+    width: 100% !important;
   }
 }
+
 
 
     </style>
