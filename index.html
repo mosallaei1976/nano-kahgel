@@ -1195,34 +1195,58 @@
     max-width: 90% !important;
     text-align: center !important;
   }
+/* ===== نسخه نهایی اصلاح هدر و هیرو در موبایل ===== */
+@media screen and (max-width: 768px) {
 
-  /* اندازه فونت تیتر اصلی برای جلوگیری از شکستن بی‌قواره */
-  .hero-title, h1 {
-    font-size: 1.8rem !important;
-    line-height: 1.4 !important;
-    margin-top: 10px !important;
-  }
-
-  /* کپسول بالای تیتر */
-  .hero-badge, .badge {
-    font-size: 12px !important;
-    padding: 6px 12px !important;
-    width: fit-content !important;
-    margin: 0 auto 12px auto !important;
-  }
-
-  /* دکمه‌های فراخوان بخش هیرو */
-  .hero-actions, .cta-group {
+  /* هدر: چیدمان ستونی، بدون همپوشانی، ارتفاع کم */
+  header, .navbar, .nav-container, .site-header {
+    display: flex !important;
     flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
     gap: 10px !important;
-    width: 100% !important;
+    padding: 14px 16px !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 
-  .hero-actions a, .hero-actions button {
-    width: 100% !important;
+  /* عنوان برند: کوچک، تک‌خطی، بدون بیرون‌زدگی */
+  header h1, .brand-title, .logo-text, .site-title {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
     text-align: center !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* دکمه تماس هدر: تمام‌عرض و خوانا */
+  header .cta, .header-cta, header a[href^="tel:"], .btn-contact {
+    display: block !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
+    font-size: 15px !important;
+    padding: 10px 16px !important;
+    white-space: nowrap !important;
+    position: static !important;
+  }
+
+  /* اگر عناصر absolute موقعیت‌دهی شده‌اند، بازنشانی شوند */
+  header * {
+    position: static !important;
+    transform: none !important;
+  }
+
+  /* فاصله هیرو از هدر، چون هدر بلندتر شده */
+  .hero, section.hero, #hero {
+    padding-top: 24px !important;
+    margin-top: 0 !important;
   }
 }
+
 
     </style>
 </head>
